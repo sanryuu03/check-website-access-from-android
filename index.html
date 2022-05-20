@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body { /* All other devices */
+    background-color:#f99;
+}
+body.android { /* Android devices */
+    background-color:#9f9;
+}</style>
+<body>
+    <p id="demo">
+
+        Green background = Android device.
+        <br />
+        Red background = Any other device.
+    </p>
+</body>
+<script>
+    let agent = navigator.userAgent;
+    window.addEventListener('load', function () {
+  if(navigator != undefined && navigator.userAgent != undefined) {
+      user_agent = navigator.userAgent.toLowerCase();
+      if(user_agent.indexOf('android') > -1) { // Is Android.
+        $(document.body).addClass('android');
+    }
+}
+document.getElementById("demo").innerHTML = "User-agent:<br>" + user_agent;
+})
+</script>
+</html>
