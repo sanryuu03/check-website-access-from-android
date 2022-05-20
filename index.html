@@ -20,11 +20,11 @@
 </style>
 
 <body>
+    Green background = Android device.
+    <br />
+    Red background = Any other device.
         <p id="demo">
     
-            Green background = Android device.
-            <br />
-            Red background = Any other device.
         </p>
 </body>
 <script>
@@ -37,8 +37,8 @@
                 body.classList.add('android');
             }
         }
-        document.getElementById("demo").innerHTML = "User-agent:<br>" + user_agent;
     })
+    document.getElementById("demo").innerHTML = "User-agent:<br>" + user_agent;
 </script>
 
 </html>
