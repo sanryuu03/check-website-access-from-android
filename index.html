@@ -23,22 +23,25 @@
     Green background = Android device.
     <br />
     Red background = Any other device.
+    <br />
+    browser di akses dari = website
         <p id="demo">
-    
+
         </p>
-</body>
-<script>
-    var body = document.body;
-    let agent = navigator.userAgent;
-    let user_agent = navigator.userAgent.toLowerCase();
-    window.addEventListener('load', function () {
-        if (navigator != undefined && navigator.userAgent != undefined) {
-            if (user_agent.indexOf('android') > -1) { // Is Android.
-                body.classList.add('android');
+    </body>
+    <script>
+        var body = document.body;
+        let agent = navigator.userAgent;
+        let user_agent = navigator.userAgent.toLowerCase();
+        window.addEventListener('load', function () {
+            if (navigator != undefined && navigator.userAgent != undefined) {
+                if (user_agent.indexOf('android') > -1) { // Is Android.
+                    body.classList.add('android');
+                    document.body.innerHTML = document.body.innerHTML.replace('website', 'android')
+                }
             }
-        }
-    })
-    document.getElementById("demo").innerHTML = "User-agent:<br>" + user_agent;
+        })
+        document.getElementById("demo").innerHTML = "User-agent:<br>" + user_agent;
 </script>
 
 </html>
